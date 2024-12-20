@@ -1,4 +1,4 @@
-# 🌮 - Welcome to the Tasty Routes App 🚐
+# 🌮 - Welcome to the Tasty Routes App - 🚐
 
 Track sales, find trends and optimal locations, and fuel your food truck success!
 
