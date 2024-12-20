@@ -2,7 +2,7 @@ import streamlit as st
 
 def app():
     col1, col2, col3 = st.columns([1,4,1])
-    col2.markdown("<h1 style='text-align: center; color: #4A90E2;'>🌮Welcome to the Food Truck Sales App 🚐</h1>", unsafe_allow_html=True)
+    col2.markdown("<h1 style='text-align: center; color: #4A90E2;'>🌮 - Welcome to the Tasty Routes App - 🚐</h1>", unsafe_allow_html=True)
     
     col2.markdown("""
         <h3 style='text-align: center; color: #333;'>Track sales, find trends and optimal locations, and fuel your food truck success!.</h3>
