@@ -27,7 +27,7 @@ jobs:
     - name: Set Azure Storage Connection String and Other Secrets as Environment Variables
       run: |
         echo "Setting Azure Storage Connection String and Blob Details"
-        az webapp config appsettings set --name tasty-routes --resource-group tastyapp --settings \
+        az webapp config appsettings set --name tastyroutes --resource-group tastyapp --settings \
           AZURE_STORAGE_CONNECTION_STRING=${{ secrets.AZURE_STORAGE_CONNECTION_STRING }} \
           AZURE_BLOB_NAME=${{ secrets.AZURE_BLOB_NAME }} \
           AZURE_CONTAINER_NAME=${{ secrets.AZURE_CONTAINER_NAME }}
@@ -43,4 +43,4 @@ jobs:
     - name: Restart Azure Web App
       run: |
         echo "Restarting Web App"
-        az webapp restart --name tasty-routes --resource-group tastyapp
+        az webapp restart --name tastyroutes --resource-group tastyapp
