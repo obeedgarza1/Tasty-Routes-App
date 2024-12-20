@@ -1,0 +1,38 @@
+name: Deploy to Azure Web App
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Log in to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Verify files before deployment
+      run: |
+        echo "Files in the repository:"
+        ls -alh
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'tasty-routes'
+        slot-name: 'Production'
+        resource-group-name: 'tastyapp'
+        package: '.'
+
+    - name: Restart Azure Web App
+      run: |
+        echo "Restarting Web App"
+        az webapp restart --name tasty-routes --resource-group tastyapp
